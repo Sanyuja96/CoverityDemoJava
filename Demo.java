@@ -1,22 +1,34 @@
-public class Demo {
+public class BuggyExample {
+
     public static void main(String[] args) {
-        int a = 10;
-        int b = 0;
-        int result = a / b; // ❌ Division by zero
-        System.out.println("Result: " + result);
+        int x = 10;
+        int y = 0;
+
+        // ❌ Division by zero (Bug risk)
+        int result = x / y;
 
         // ❌ Unused variable
-        String name = "CodacyDemo";
+        String password = "12345"; // ❌ Hardcoded credential (Security issue)
 
-        // ❌ Bad practice: empty catch block
+        // ❌ Empty catch block
         try {
-            int[] arr = new int[2];
-            System.out.println(arr[5]);
+            String s = null;
+            System.out.println(s.length());
         } catch (Exception e) {
         }
 
-        // ❌ Repeated code (duplication)
-        System.out.println("Error test");
-        System.out.println("Error test");
+        // ❌ Code duplication
+        System.out.println("Debugging...");
+        System.out.println("Debugging...");
+
+        // ❌ Magic number (Best practice)
+        if (x == 42) {
+            System.out.println("The answer!");
+        }
+
+        // ❌ Poor formatting (Code style)
+          int   badIndent =   5;
+        System.out.println("Bad indent: " + badIndent);
     }
 }
+
